@@ -1,19 +1,45 @@
 import random
 
-hamburguesas = {"Hamburguesa Roja": 1, "Hamburguesa Verde": 1, "Hamburguesa Blanca": 1, "Hamburguesa Amarilla": 1, "Hamburguesa Azul": 1, "Hamburguesa Naranja": 1, "Hamburguesa Violeta": 1, "Hamburguesa Celeste": 1, "Hamburguesa Rosada": 1, "Hamburguesa Negra": 1}
+hamburguesas = {"Hamburguesa Roja": 3400.00, 
+                "Hamburguesa Verde": 3000.00, 
+                "Hamburguesa Blanca": 3000.00, 
+                "Hamburguesa Amarilla": 3450.00, 
+                "Hamburguesa Azul": 2950.00, 
+                "Hamburguesa Naranja": 3500.00, 
+                "Hamburguesa Violeta": 3100.00, 
+                "Hamburguesa Celeste": 3050.00, 
+                "Hamburguesa Rosada": 3450.00, 
+                "Hamburguesa Negra": 3350.00
+                }
 
-hamburguesa_roja = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Tomate': 1, 'Lechuga': 1, 'Queso Cheddar': 1, 'Bacon': 1, 'Cebolla': 1, 'Mostaza': 1, 'Mayonesa': 1}
-hamburguesa_verde = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Huevo': 1, 'Queso Mozzarella': 1, 'Champiñones': 1, 'Perejil': 1, 'Salsa Barbacoa': 1, 'Pepinillos': 1, 'Mayonesa': 1}
-hamburguesa_blanca = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Queso Azul': 1, 'Tomate': 1, 'Lechuga': 1, 'Ketchup': 1, 'Cebolla': 1, 'Mayonesa': 1}
-hamburguesa_amarilla = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Mostaza': 1, 'Queso Cheddar': 1, 'Bacon': 1, 'Pepinillos': 1, 'Huevo': 1, 'Champiñones': 1, 'Mayonesa': 1}
-hamburguesa_azul = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Salsa Barbacoa': 1, 'Lechuga': 1, 'Queso Mozzarella': 1, 'Tomate': 1, 'Cebolla': 1, 'Perejil': 1, 'Mayonesa': 1}
-hamburguesa_naranja = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Mostaza': 1, 'Queso Azul': 1, 'Cebolla': 1, 'Bacon': 1, 'Champiñones': 1, 'Pepinillos': 1, 'Mayonesa': 1}
-hamburguesa_violeta = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Ketchup': 1, 'Lechuga': 1, 'Huevo': 1, 'Queso Mozzarella': 1, 'Tomate': 1, 'Salsa Barbacoa': 1, 'Mayonesa': 1}
-hamburguesa_celeste = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Cebolla': 1, 'Queso Cheddar': 1, 'Perejil': 1, 'Bacon': 1, 'Tomate': 1, 'Mayonesa': 1}
-hamburguesa_rosada = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Pepinillos': 1, 'Lechuga': 1, 'Champiñones': 1, 'Queso Mozzarella': 1, 'Mostaza': 1, 'Cebolla': 1, 'Mayonesa': 1}
-hamburguesa_negra = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Salsa Barbacoa': 1, 'Queso Azul': 1, 'Tomate': 1, 'Bacon': 1, 'Huevo': 1, 'Mayonesa': 1}
+hamburguesa_roja = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Tomate': 200, 'Lechuga': 200, 'Queso Cheddar': 550, 'Bacon': 500, 'Cebolla': 200, 'Mostaza': 200, 'Mayonesa': 200}
+hamburguesa_verde = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Huevo': 250, 'Queso Mozzarella': 500, 'Champiñones': 250, 'Perejil': 100, 'Salsa Barbacoa': 200, 'Pepinillos': 150, 'Mayonesa': 200}
+hamburguesa_blanca = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Queso Azul': 650, 'Tomate': 200, 'Lechuga': 200, 'Ketchup': 200, 'Cebolla': 200, 'Mayonesa': 200}
+hamburguesa_amarilla = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Mostaza': 200, 'Queso Cheddar': 550, 'Bacon': 500, 'Pepinillos': 150, 'Huevo': 250, 'Champiñones': 250, 'Mayonesa': 200}
+hamburguesa_azul = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Salsa Barbacoa': 200, 'Lechuga': 200, 'Queso Mozzarella': 500, 'Tomate': 200, 'Cebolla': 200, 'Perejil': 100, 'Mayonesa': 200}
+hamburguesa_naranja = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Mostaza': 200, 'Queso Azul': 650, 'Cebolla': 200, 'Bacon': 500, 'Champiñones': 250, 'Pepinillos': 150, 'Mayonesa': 200}
+hamburguesa_violeta = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Ketchup': 200, 'Lechuga': 200, 'Huevo': 250, 'Queso Mozzarella': 500, 'Tomate': 200, 'Salsa Barbacoa': 200, 'Mayonesa': 200}
+hamburguesa_celeste = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Cebolla': 200, 'Queso Cheddar': 550, 'Perejil': 150, 'Bacon': 500, 'Tomate': 200, 'Mayonesa': 200}
+hamburguesa_rosada = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Pepinillos': 150, 'Lechuga': 200, 'Champiñones': 250, 'Queso Mozzarella': 500, 'Mostaza': 200, 'Cebolla': 200, 'Mayonesa': 200}
+hamburguesa_negra = {'Pan de hamburguesa': 450, '200 gramos de carne': 900, 'Salsa Barbacoa': 200, 'Queso Azul': 650, 'Tomate': 200, 'Bacon': 500, 'Huevo': 250, 'Mayonesa': 200}
 
-ingredientes = {'Pan de hamburguesa': 1, '200 gramos de carne': 1, 'Mayonesa': 1, 'Tomate': 1, 'Lechuga': 1, 'Queso Cheddar': 1, 'Queso Mozzarella': 1, 'Bacon': 1, 'Huevo': 1, 'Cebolla': 1, 'Perejil': 1, 'Ketchup': 1, 'Pepinillos': 1, 'Mostaza': 1, 'Queso Azul': 1, 'Salsa Barbacoa': 1, 'Champiñones': 1}
+ingredientes = {'Pan de hamburguesa': 450.00, 
+                '200 gramos de carne': 900.00, 
+                'Mayonesa': 200.00, 'Tomate': 200.00, 
+                'Lechuga': 200.00, 
+                'Queso Cheddar': 550.00, 
+                'Queso Mozzarella': 500.00, 
+                'Bacon': 500.00, 
+                'Huevo': 250.00, 
+                'Cebolla': 200.00, 
+                'Perejil': 100.00, 
+                'Ketchup': 200.00, 
+                'Pepinillos': 150.00, 
+                'Mostaza': 200.00, 
+                'Queso Azul': 650.00, 
+                'Salsa Barbacoa': 200.00, 
+                'Champiñones': 250.00
+                }
 
 set_roja = set(hamburguesa_roja.keys())
 set_verde = set(hamburguesa_verde.keys())
@@ -38,8 +64,29 @@ lista_celeste = list(hamburguesa_celeste.keys())
 lista_rosada = list(hamburguesa_rosada.keys())
 lista_negra = list(hamburguesa_negra.keys())
 
-conjunto_hamburguesas = {'1': set_roja, '2': set_verde, '3': set_blanca, '4': set_amarilla, '5': set_azul, '6': set_naranja, '7': set_violate, '8': set_celeste, '9': set_rosada, '10': set_negra}
-lista_hamburguesas = {'1': lista_roja, '2': lista_verde, '3': lista_blanca, '4': lista_amarilla, '5': lista_azul, '6': lista_naranja, '7': lista_violeta, '8': lista_celeste, '9': lista_rosada, '10': lista_negra}
+conjunto_hamburguesas = {'1': set_roja, 
+                         '2': set_verde, 
+                         '3': set_blanca, 
+                         '4': set_amarilla, 
+                         '5': set_azul, 
+                         '6': set_naranja, 
+                         '7': set_violate, 
+                         '8': set_celeste, 
+                         '9': set_rosada, 
+                         '10': set_negra
+                         }
+
+lista_hamburguesas = {'1': lista_roja, 
+                      '2': lista_verde, 
+                      '3': lista_blanca, 
+                      '4': lista_amarilla, 
+                      '5': lista_azul, 
+                      '6': lista_naranja, 
+                      '7': lista_violeta, 
+                      '8': lista_celeste, 
+                      '9': lista_rosada, 
+                      '10': lista_negra
+                      }
 
 menu_principal = ['Ver el menú de la casa', 
                   'Elección de una hamburguesa',
@@ -59,9 +106,10 @@ def mostrar_menu(menu):
     for i, comida in enumerate(menu, start = 1):
         print(f'{i}. {comida}')
 
-def mostrar_menu_hamburguesa(menu):
-    for i, (comida, precio) in enumerate(menu.items(), start = 1):
-        print(f'{i}. {comida}: {precio}')
+def mostrar_menu_carrito(carrito, cantidad):
+    print("Contenido del carrito:")
+    for comida, precio in carrito.items():
+        print(f"{cantidad}. {comida}: {precio}")
 
 def agregar_carrito(opcion, eleccion_menu, cantidad, carrito):
     menu_comida = list(eleccion_menu.keys())
@@ -105,6 +153,11 @@ def encontrar_ingredientes_faltantes(hamburguesa_elegida, conjunto_hamburguesas,
         return ingredientes_faltantes
     else:
         return None
+    
+def calcular_precio_hamburguesa(ingredientes_hamburguesa):
+    # Calcular el precio total de los ingredientes de la hamburguesa
+    precio_total = sum(ingredientes.get(ingrediente, 0) for ingrediente in ingredientes_hamburguesa)
+    return precio_total
 
 print()
 print('*** HAMBURCOLORS ***\n')
@@ -134,9 +187,9 @@ while True:
             else:
                 print('Opción inválida.')
 
-            repetir = input('¿Desea ver otra hamburguesa? (Si/No): ').strip().lower()
+            repetir1 = input('¿Desea ver otra hamburguesa? (Si/No): ').strip().lower()
             print()
-            if repetir != 'si':
+            if repetir1 != 'si':
                 salir_ver_menu = True
 
     elif opcion == '2':
@@ -145,14 +198,19 @@ while True:
             print()
             print('Elección de hamburguesa\n')
             mostrar_menu(hamburguesas)
-            opcion_compra = int(input('Elige la hamburguesa: '))
-            cantidad = int(input('Cuantas desea agregar a su carrito: '))
-            agregar_carrito(opcion_compra, hamburguesas, cantidad, carrito)
-            print('Su elección se ha agregado correctamente')
-            print(carrito)
-            seguir_agregando = input('¿Desea agregar más hamburguesas al carrito? (Si/No): ').strip().lower()
-            if seguir_agregando != 'si':
+            agregar_al_carrito = input('¿Desea agregar una hamburguesa al carrito? (Si/No): ').strip().lower()
+            if agregar_al_carrito == 'si':
+                opcion_compra2 = int(input('Elige la hamburguesa: '))
+                cantidad2 = int(input('Cuantas desea agregar a su carrito: '))
+                agregar_carrito(opcion_compra2, hamburguesas, cantidad2, carrito)
+                print('Su elección se ha agregado correctamente')
+                mostrar_menu_carrito(carrito, cantidad2)
+                seguir_agregando2 = input('¿Desea agregar más hamburguesas al carrito? (Si/No): ').strip().lower()
+                if seguir_agregando2 != 'si':
+                    salir_eleccion = True
+            else:
                 salir_eleccion = True
+                print()
 
     elif opcion == '3':
         contador_combinaciones = 1
@@ -168,20 +226,21 @@ while True:
             if union is not None:
                 print(f'La unión de sus dos elecciones son: \n')
                 mostrar_menu(union)
-                desea_agregar = input('¿Desea agregar esta hamburguesa al carrito con un nombre específico? (Si/No): ').strip().lower()
-                if desea_agregar == 'si':
-                    cantidad = int(input('Cuantas desea agregar a su carrito: '))
+                desea_agregar3 = input('¿Desea agregar esta hamburguesa al carrito con un nombre específico? (Si/No): ').strip().lower()
+                if desea_agregar3 == 'si':
+                    cantidad3 = int(input('Cuantas desea agregar a su carrito: '))
                     nombre_hamburguesa = f'Combinación nro {contador_combinaciones}'
-                    carrito[nombre_hamburguesa] = 1 * cantidad
+                    precio_hamburguesa = calcular_precio_hamburguesa(union)
+                    carrito[nombre_hamburguesa] = precio_hamburguesa * cantidad3
                     print('Su combinación de hamburguesas se ha agregado al carrito.')
-                    print(carrito)
+                    mostrar_menu_carrito(carrito, cantidad3)
                 else:
                     print('La hamburguesa no se ha agregado al carrito.')
             else:
                 print('Las opciones elegidas no son válidas.')
 
-            seguir_agregando = input('¿Desea agregar más hamburguesas al carrito? (Si/No): ').strip().lower()
-            if seguir_agregando != 'si':
+            seguir_agregando3 = input('¿Desea agregar más hamburguesas al carrito? (Si/No): ').strip().lower()
+            if seguir_agregando3 != 'si':
                 salir_union = True  
             
     elif opcion == '4':
@@ -190,19 +249,19 @@ while True:
             print('*** Ingredientes en Común ***\n')
             print('Puedes conocer los ingredientes que tienen en común dos hamburguesas.\n')
             mostrar_menu(hamburguesas)
-            hamburguesa1 = input('Seleccione una opcion: ')
-            hamburguesa2 = input('Seleccione una segunda opcion: ')
+            hamburguesa3 = input('Seleccione una opcion: ')
+            hamburguesa4 = input('Seleccione una segunda opcion: ')
             print()
-            interseccion = interseccion_hamburguesas(hamburguesa1, hamburguesa2, conjunto_hamburguesas)
+            interseccion = interseccion_hamburguesas(hamburguesa3, hamburguesa4, conjunto_hamburguesas)
             if interseccion is not None:
                 print(f'Los ingredientes en común de sus dos elecciones son: \n')
                 mostrar_menu(interseccion)
             else:
                 print('Las opciones elegidas no son válidas.')
 
-            repetir = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
+            repetir4 = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
             print()
-            if repetir != 'si':
+            if repetir4 != 'si':
                 salir_interseccion = True
 
     elif opcion == '5':
@@ -211,8 +270,8 @@ while True:
             print('*** Ingredientes Exclusivos ***\n')
             print('Puedes conocer los ingredientes exclusivos que tiene una hamburguesa respecto a la otra.\n')
             mostrar_menu(hamburguesas)
-            hamburguesa1 = input('Seleccione su hamburguesa: ')
-            hamburguesa2 = input('Seleccione la otra hamburguesa: ')
+            hamburguesa5 = input('Seleccione su hamburguesa: ')
+            hamburguesa6 = input('Seleccione la otra hamburguesa: ')
             print()
             diferencia = interseccion_hamburguesas(hamburguesa1, hamburguesa2, conjunto_hamburguesas)
             if diferencia is not None:
@@ -221,9 +280,9 @@ while True:
             else:
                 print('Las opciones elegidas no son válidas.')
 
-            repetir = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
+            repetir5 = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
             print()
-            if repetir != 'si':
+            if repetir5 != 'si':
                 salir_diferencia = True
         
     elif opcion == '6':
@@ -232,8 +291,8 @@ while True:
             print('*** Comparar Hamburguesas ***\n')
             print('Puedes comparar dos hamburguesas.')
             mostrar_menu(hamburguesas)
-            hamburguesa1 = input('Seleccione una opcion: ')
-            hamburguesa2 = input('Seleccione una segunda opcion: ')
+            hamburguesa7 = input('Seleccione una opcion: ')
+            hamburguesa8 = input('Seleccione una segunda opcion: ')
             print()
             lista_hamburguesa1, lista_hamburguesa2 = comparacion(hamburguesa1, hamburguesa2, lista_hamburguesas)
             if lista_hamburguesa1 is not None and lista_hamburguesa2 is not None:
@@ -245,9 +304,9 @@ while True:
             else:
                 print('Alguna de las opciones elegidas no es válida.')
 
-            repetir = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
+            repetir6 = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
             print()
-            if repetir != 'si':
+            if repetir6 != 'si':
                 salir_comparacion = True
                 
 
@@ -266,9 +325,9 @@ while True:
             else:
                 print('La hamburguesa seleccionada no es válida.')
             
-            repetir = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
+            repetir7 = input('¿Desea ver otra opcion? (Si/No): ').strip().lower()
             print()
-            if repetir != 'si':
+            if repetir7 != 'si':
                 faltante = True
         
     elif opcion == '8':
@@ -286,24 +345,27 @@ while True:
                 if eleccion in lista_hamburguesas:
                     mostrar_menu(lista_hamburguesas[eleccion])
 
-                desea_agregar = input('¿Desea agregar esta hamburguesa al carrito con un nombre específico? (Si/No): ').strip().lower()
+                desea_agregar = input('¿Desea agregar esta hamburguesa al carrito? (Si/No): ').strip().lower()
                 if desea_agregar == 'si':
-                    cantidad = int(input('Cuantas desea agregar a su carrito: '))
+                    cantidad8 = int(input('¿Cuantas desea agregar?: '))
                     nombre_hamburguesa = f'Hamburguesa aleatoria {contador_combinaciones}'
-                    carrito[nombre_hamburguesa] = 1 * cantidad
-                    print('Su hamburguesa aleatoria se ha agregado al carrito.')
-                    print(carrito) 
+                    carrito[nombre_hamburguesa] = 1 * cantidad8
+                    print('Su hamburguesa aleatoria ha sido agregado al carrito.')
+                    mostrar_menu(carrito)
 
-            if desea_agregar == 'no':
-                repetir = input('¿Desea agregar otra hamburguesa aleatoria? (Si/No): ').strip().lower()
+                repetir8 = input('¿Desea agregar otra hamburguesa aleatoria? (Si/No): ').strip().lower()
                 print()
-                if repetir != 'si':
+                if repetir8 != 'si':
                     salir_aleatoriamente = True
+            else:
+                salir_aleatoriamente = True
+                print()
                     
     elif opcion == '9':
-        mostrar_menu(carrito)
-        print('¡Muchas gracias por su compra! Que la disfrute')
-        break
+        for comida, precio in carrito.items():
+            print(f'- {comida}: {precio}')
+            print('¡Muchas gracias por su compra! Que la disfrute')
+            break
     else: 
         print('¡Muchas gracias por su visita!')
         break
