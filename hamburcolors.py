@@ -113,16 +113,19 @@ menu_principal = ['Ver el menú de la casa',
 
 eleccion_cliente = []
 carrito_visible = {}
+carrito_cantidad = []
 carrito = {}
 
 def mostrar_menu(menu):
     for i, comida in enumerate(menu, start = 1):
         print(f'{i}. {comida}')
 
-def mostrar_menu_carrito(carrito):
+def mostrar_menu_carrito(carrito, cantidad, carrito_cantidad):
     print("Contenido del carrito:")
+    iter_cantidad = iter(carrito_cantidad)
     for comida, precio in carrito.items():
-        print(f"{comida}: {precio}")
+        print(f"{comida}: ${precio}")
+        print(f'Cant: {next(iter_cantidad)}')
 
 def agregar_carrito(opcion, eleccion_menu, cantidad, carrito, carrito_visible):
     menu_comida = list(eleccion_menu.keys())
@@ -135,10 +138,10 @@ def agregar_carrito(opcion, eleccion_menu, cantidad, carrito, carrito_visible):
         
 
     if eleccion_comida in carrito_visible:
-        carrito_visible[cantidad] += 'Unid.'
+        carrito_cantidad.append(cantidad)
         carrito_visible[eleccion_comida] += eleccion_menu[eleccion_comida] * cantidad
     else:
-        carrito_visible[cantidad] = 'Unid.'
+        carrito_cantidad.append(cantidad)
         carrito_visible[eleccion_comida] = eleccion_menu[eleccion_comida] * cantidad
 
 def union_hamburguesas(opcion1, opcion2, hamburguesa):
@@ -226,7 +229,7 @@ while True:
                 print()
                 agregar_carrito(opcion_compra2, hamburguesas, cantidad2, carrito, carrito_visible)
                 print('Su elección se ha agregado correctamente\n')
-                mostrar_menu_carrito(carrito_visible)
+                mostrar_menu_carrito(carrito_visible, cantidad2, carrito_cantidad)
                 print()
                 seguir_agregando2 = input('¿Desea salir? (Si/No): ').strip().lower()
                 
@@ -234,8 +237,7 @@ while True:
                     salir_eleccion = True
                     print()
                 else:
-                    salir_eleccion = True
-                    print()
+                    continue
             else:
                 salir_eleccion = True
                 print()
@@ -261,10 +263,10 @@ while True:
                     nombre_hamburguesa = f'Combinación nro {contador_combinaciones}'
                     precio_hamburguesa = calcular_precio_hamburguesa(union)
                     carrito[nombre_hamburguesa] = precio_hamburguesa * cantidad3
-                    carrito_visible[cantidad3] = 'Unid.'
+                    carrito_cantidad.append(cantidad3)
                     carrito_visible[nombre_hamburguesa] = precio_hamburguesa * cantidad3 #Quede aca, hay que seguir modificando
                     print('Su combinación de hamburguesas se ha agregado al carrito.\n')
-                    mostrar_menu_carrito(carrito_visible)
+                    mostrar_menu_carrito(carrito_visible, cantidad3, carrito_cantidad)
                     print()
                 else:
                     print('La hamburguesa no se ha agregado al carrito.\n')
@@ -386,10 +388,10 @@ while True:
                 if desea_agregar == 'si':
                     cantidad8 = int(input('¿Cuantas desea agregar?: '))
                     carrito[eleccion_random] = precio_random * cantidad8
-                    carrito_visible[cantidad8] = 'Unid.'
+                    carrito_cantidad.append(cantidad8)
                     carrito_visible[eleccion_random] = precio_random * cantidad8
                     print('Su hamburguesa aleatoria ha sido agregado al carrito.\n')
-                    mostrar_menu_carrito(carrito_visible)
+                    mostrar_menu_carrito(carrito_visible, cantidad8, carrito_cantidad)
                     print()
 
                 repetir8 = input('¿Desea ver otra hamburguesa aleatoria? (Si/No): ').strip().lower()
@@ -400,11 +402,10 @@ while True:
                 salir_aleatoriamente = True
                     
     elif opcion == '9':
-        for comida, precio in carrito_visible.items():
-            print(f'- {comida}: {precio}')
-            suma_precios = 0
-            for precio in carrito.values():
-                suma_precios += precio
+        mostrar_menu_carrito(carrito_visible, cantidad2, carrito_cantidad)
+        suma_precios = 0
+        for precio in carrito.values():
+            suma_precios += precio
 
         print()
         print(f'- Total: {suma_precios}\n')
