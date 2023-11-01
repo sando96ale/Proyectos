@@ -88,6 +88,18 @@ lista_hamburguesas = {'1': lista_roja,
                       '10': lista_negra
                       }
 
+lista_hamburguesas_random = {'1': "Hamburguesa Roja", 
+                             '2': "Hamburguesa Verde", 
+                             '3': "Hamburguesa Blanca", 
+                             '4': "Hamburguesa Amarilla", 
+                             '5': "Hamburguesa Azul", 
+                             '6': "Hamburguesa Naranja", 
+                             '7': "Hamburguesa Violeta", 
+                             '8': "Hamburguesa Celeste", 
+                             '9': "Hamburguesa Rosada", 
+                             '10': "Hamburguesa Negra"
+                             }
+
 menu_principal = ['Ver el menú de la casa', 
                   'Elección de una hamburguesa',
                   'Unir hamburguesas', 
@@ -100,18 +112,19 @@ menu_principal = ['Ver el menú de la casa',
                   'Salir']
 
 eleccion_cliente = []
+carrito_visible = {}
 carrito = {}
 
 def mostrar_menu(menu):
     for i, comida in enumerate(menu, start = 1):
         print(f'{i}. {comida}')
 
-def mostrar_menu_carrito(carrito, cantidad):
+def mostrar_menu_carrito(carrito):
     print("Contenido del carrito:")
     for comida, precio in carrito.items():
-        print(f"{cantidad}. {comida}: {precio}")
+        print(f"{comida}: {precio}")
 
-def agregar_carrito(opcion, eleccion_menu, cantidad, carrito):
+def agregar_carrito(opcion, eleccion_menu, cantidad, carrito, carrito_visible):
     menu_comida = list(eleccion_menu.keys())
     eleccion_comida = menu_comida[opcion - 1]
     
@@ -119,6 +132,14 @@ def agregar_carrito(opcion, eleccion_menu, cantidad, carrito):
         carrito[eleccion_comida] += eleccion_menu[eleccion_comida] * cantidad
     else:
         carrito[eleccion_comida] = eleccion_menu[eleccion_comida] * cantidad
+        
+
+    if eleccion_comida in carrito_visible:
+        carrito_visible[cantidad] += 'Unid.'
+        carrito_visible[eleccion_comida] += eleccion_menu[eleccion_comida] * cantidad
+    else:
+        carrito_visible[cantidad] = 'Unid.'
+        carrito_visible[eleccion_comida] = eleccion_menu[eleccion_comida] * cantidad
 
 def union_hamburguesas(opcion1, opcion2, hamburguesa):
     if opcion1 in hamburguesa and opcion2 in hamburguesa:
@@ -202,12 +223,19 @@ while True:
             if agregar_al_carrito == 'si':
                 opcion_compra2 = int(input('Elige la hamburguesa: '))
                 cantidad2 = int(input('Cuantas desea agregar a su carrito: '))
-                agregar_carrito(opcion_compra2, hamburguesas, cantidad2, carrito)
-                print('Su elección se ha agregado correctamente')
-                mostrar_menu_carrito(carrito, cantidad2)
-                seguir_agregando2 = input('¿Desea agregar más hamburguesas al carrito? (Si/No): ').strip().lower()
-                if seguir_agregando2 != 'si':
+                print()
+                agregar_carrito(opcion_compra2, hamburguesas, cantidad2, carrito, carrito_visible)
+                print('Su elección se ha agregado correctamente\n')
+                mostrar_menu_carrito(carrito_visible)
+                print()
+                seguir_agregando2 = input('¿Desea salir? (Si/No): ').strip().lower()
+                
+                if seguir_agregando2 != 'no':
                     salir_eleccion = True
+                    print()
+                else:
+                    salir_eleccion = True
+                    print()
             else:
                 salir_eleccion = True
                 print()
@@ -226,20 +254,27 @@ while True:
             if union is not None:
                 print(f'La unión de sus dos elecciones son: \n')
                 mostrar_menu(union)
-                desea_agregar3 = input('¿Desea agregar esta hamburguesa al carrito con un nombre específico? (Si/No): ').strip().lower()
+                desea_agregar3 = input('¿Desea agregar esta hamburguesa al carrito? (Si/No): ').strip().lower()
                 if desea_agregar3 == 'si':
                     cantidad3 = int(input('Cuantas desea agregar a su carrito: '))
+                    print()
                     nombre_hamburguesa = f'Combinación nro {contador_combinaciones}'
                     precio_hamburguesa = calcular_precio_hamburguesa(union)
                     carrito[nombre_hamburguesa] = precio_hamburguesa * cantidad3
-                    print('Su combinación de hamburguesas se ha agregado al carrito.')
-                    mostrar_menu_carrito(carrito, cantidad3)
+                    carrito_visible[cantidad3] = 'Unid.'
+                    carrito_visible[nombre_hamburguesa] = precio_hamburguesa * cantidad3 #Quede aca, hay que seguir modificando
+                    print('Su combinación de hamburguesas se ha agregado al carrito.\n')
+                    mostrar_menu_carrito(carrito_visible)
+                    print()
                 else:
-                    print('La hamburguesa no se ha agregado al carrito.')
+                    print('La hamburguesa no se ha agregado al carrito.\n')
+                    salir_union = True
+                    break
             else:
                 print('Las opciones elegidas no son válidas.')
 
-            seguir_agregando3 = input('¿Desea agregar más hamburguesas al carrito? (Si/No): ').strip().lower()
+            seguir_agregando3 = input('¿Desea unir dos hamburguesas más? (Si/No): ').strip().lower()
+            print()
             if seguir_agregando3 != 'si':
                 salir_union = True  
             
@@ -339,36 +374,43 @@ while True:
             hamburguesa = input('Comenzamos con tu eleccion(SI/NO): ').lower()
             if hamburguesa == 'si':
                 eleccion = random.choice(list(lista_hamburguesas.keys()))
+                eleccion_random = lista_hamburguesas_random[eleccion]
+                precio_random = hamburguesas[eleccion_random]
                 print()
-                print(f'Ha salido seleccionada la hamburguesa número {eleccion}')
-                print(f'Y sus ingredientes son:')
+                print(f'Ha salido seleccionada la {eleccion_random}\n')
+                print(f'Y sus ingredientes son:\n')
                 if eleccion in lista_hamburguesas:
                     mostrar_menu(lista_hamburguesas[eleccion])
 
                 desea_agregar = input('¿Desea agregar esta hamburguesa al carrito? (Si/No): ').strip().lower()
                 if desea_agregar == 'si':
                     cantidad8 = int(input('¿Cuantas desea agregar?: '))
-                    nombre_hamburguesa = f'Hamburguesa aleatoria {contador_combinaciones}'
-                    carrito[nombre_hamburguesa] = 1 * cantidad8
-                    print('Su hamburguesa aleatoria ha sido agregado al carrito.')
-                    mostrar_menu(carrito)
+                    carrito[eleccion_random] = precio_random * cantidad8
+                    carrito_visible[cantidad8] = 'Unid.'
+                    carrito_visible[eleccion_random] = precio_random * cantidad8
+                    print('Su hamburguesa aleatoria ha sido agregado al carrito.\n')
+                    mostrar_menu_carrito(carrito_visible)
+                    print()
 
-                repetir8 = input('¿Desea agregar otra hamburguesa aleatoria? (Si/No): ').strip().lower()
+                repetir8 = input('¿Desea ver otra hamburguesa aleatoria? (Si/No): ').strip().lower()
                 print()
                 if repetir8 != 'si':
                     salir_aleatoriamente = True
             else:
                 salir_aleatoriamente = True
-                print()
                     
     elif opcion == '9':
-        for comida, precio in carrito.items():
+        for comida, precio in carrito_visible.items():
             print(f'- {comida}: {precio}')
-            print('¡Muchas gracias por su compra! Que la disfrute')
-            break
+            suma_precios = 0
+            for precio in carrito.values():
+                suma_precios += precio
+
+        print()
+        print(f'- Total: {suma_precios}\n')
+        print('¡Muchas gracias por su compra! Que la disfrute')
+        break
+
     else: 
         print('¡Muchas gracias por su visita!')
         break
-
-
-print(carrito)
