@@ -123,7 +123,7 @@ if idioma == '1':
         for i, comida in enumerate(menu, start = 1):
             print(f'{i}. {comida}')
 
-    def mostrar_menu_carrito(carrito, cantidad, carrito_cantidad):
+    def mostrar_menu_carrito(carrito, carrito_cantidad):
         print("Contenido del carrito:")
         iter_cantidad = iter(carrito_cantidad)
         for comida, precio in carrito.items():
@@ -232,7 +232,7 @@ if idioma == '1':
                     print()
                     agregar_carrito(opcion_compra2, hamburguesas, cantidad2, carrito, carrito_visible)
                     print('Su elección se ha agregado correctamente\n')
-                    mostrar_menu_carrito(carrito_visible, cantidad2, carrito_cantidad)
+                    mostrar_menu_carrito(carrito_visible, carrito_cantidad)
                     print()
                     seguir_agregando2 = input('¿Desea salir? (Si/No): ').strip().lower()
                     
@@ -269,7 +269,7 @@ if idioma == '1':
                         carrito_cantidad.append(cantidad3)
                         carrito_visible[nombre_hamburguesa] = precio_hamburguesa * cantidad3 #Quede aca, hay que seguir modificando
                         print('Su combinación de hamburguesas se ha agregado al carrito.\n')
-                        mostrar_menu_carrito(carrito_visible, cantidad3, carrito_cantidad)
+                        mostrar_menu_carrito(carrito_visible, carrito_cantidad)
                         print()
                     else:
                         print('La hamburguesa no se ha agregado al carrito.\n')
@@ -394,7 +394,7 @@ if idioma == '1':
                         carrito_cantidad.append(cantidad8)
                         carrito_visible[eleccion_random] = precio_random * cantidad8
                         print('Su hamburguesa aleatoria ha sido agregado al carrito.\n')
-                        mostrar_menu_carrito(carrito_visible, cantidad8, carrito_cantidad)
+                        mostrar_menu_carrito(carrito_visible, carrito_cantidad)
                         print()
 
                     repetir8 = input('¿Desea ver otra hamburguesa aleatoria? (Si/No): ').strip().lower()
@@ -405,7 +405,7 @@ if idioma == '1':
                     salir_aleatoriamente = True
                         
         elif opcion == '9':
-            mostrar_menu_carrito(carrito_visible, cantidad2, carrito_cantidad)
+            mostrar_menu_carrito(carrito_visible, carrito_cantidad)
             suma_precios = 0
             for precio in carrito.values():
                 suma_precios += precio
@@ -540,7 +540,7 @@ elif idioma == '2':
         for i, food in enumerate(menu, start=1):
             print(f'{i}. {food}')
             
-    def show_cart_menu(cart, quantity, cart_quantity):
+    def show_cart_menu(cart, cart_quantity):
         print("Cart content:")
         iter_quantity = iter(cart_quantity)
         for food, price in cart.items():
@@ -648,7 +648,7 @@ elif idioma == '2':
                     print()
                     add_to_cart(purchase_option2, hamburgers, quantity2, cart, visible_cart)
                     print('Your choice has been added successfully\n')
-                    show_cart_menu(visible_cart, quantity2, cart_quantity)
+                    show_cart_menu(visible_cart, cart_quantity)
                     print()
                     continue_adding2 = input('Ready to checkout? (Yes/No): ').strip().lower()
                     
@@ -685,7 +685,7 @@ elif idioma == '2':
                         cart_quantity.append(quantity3)
                         visible_cart[hamburger_name] = hamburger_price * quantity3
                         print('Your hamburger combination has been added to cart.\n')
-                        show_cart_menu(visible_cart, quantity3, cart_quantity)
+                        show_cart_menu(visible_cart, cart_quantity)
                         print()
                     else:
                         print('The hamburger was not added to cart.\n')
@@ -810,7 +810,7 @@ elif idioma == '2':
                         cart_quantity.append(quantity8)
                         visible_cart[random_selection] = random_price * quantity8
                         print('Your random hamburger has been added to cart.\n')
-                        show_cart_menu(visible_cart, quantity8, cart_quantity)
+                        show_cart_menu(visible_cart, cart_quantity)
                         print()
 
                     repeat8 = input('View another random hamburger? (Yes/No): ').strip().lower()
@@ -821,7 +821,7 @@ elif idioma == '2':
                     exit_random = True
                         
         elif option == '9':
-            show_cart_menu(visible_cart, quantity3, cart_quantity)
+            show_cart_menu(visible_cart, cart_quantity)
             total_price = 0
             for price in cart.values():
                 total_price += price
